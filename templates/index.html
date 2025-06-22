@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deteksi Warna</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        color: #333;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .upload-section {
+        padding: 40px;
+        text-align: center;
+      }
+
+      .upload-form {
+        background: #f8f9fa;
+        border: 2px dashed #dee2e6;
+        border-radius: 10px;
+        padding: 40px;
+        transition: all 0.3s ease;
+      }
+
+      .upload-form:hover {
+        border-color: #4facfe;
+        background: #f0f8ff;
+      }
+
+      .file-input-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .file-input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .file-input-label {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #6c757d;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .file-input-label:hover {
+        background: #5a6268;
+        transform: translateY(-2px);
+      }
+
+      .upload-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .upload-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      }
+
+      .upload-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .results-section {
+        padding: 40px;
+        background: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+      }
+
+      .results-title {
+        color: #495057;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      .result-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        margin-bottom: 25px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .predictions-list {
+        list-style: none;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .prediction-item {
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        border-radius: 8px;
+        border-left: 4px solid #4facfe;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .prediction-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .prediction-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .validation-message {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        color: #2d3436;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 500;
+        border-left: 4px solid #e17055;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .validation-message .icon {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #4facfe;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 15px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          margin: 10px;
+          border-radius: 10px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .upload-section,
+        .results-section {
+          padding: 20px;
+        }
+
+        .upload-form {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🎨 Color Detection</h1>
+        <p>Upload gambar untuk mendeteksi warna menggunakan AI</p>
+      </div>
+
+      <div class="upload-section">
+        <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form" id="uploadForm">
+          <div class="file-input-wrapper">
+            <input type="file" name="image" required class="file-input" id="imageInput" accept="image/*" />
+            <label for="imageInput" class="file-input-label"> 📁 Pilih Gambar </label>
+          </div>
+          <br />
+          <button type="submit" class="upload-btn" id="uploadBtn">🚀 Deteksi Warna</button>
+        </form>
+
+        <div class="loading" id="loading">
+          <div class="spinner"></div>
+          <p>Sedang memproses gambar...</p>
+        </div>
+      </div>
+
+      {% if output_image %}
+      <div class="results-section">
+        <h2 class="results-title">🎯 Hasil Deteksi</h2>
+
+        {% if validation_message %}
+        <div class="validation-message">
+          <span class="icon">⚠️</span>
+          {{ validation_message }}
+        </div>
+        {% endif %}
+
+        <img src="{{ url_for('static', filename=output_image) }}" class="result-image" alt="Hasil deteksi" />
+
+        {% if predictions %}
+        <ul class="predictions-list">
+          {% for pred in predictions %}
+          <li class="prediction-item">🏷️ {{ pred.label }} - Confidence: {{ "%.2f"|format(pred.confidence * 100) }}%</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+
+    <script>
+      document.getElementById("uploadForm").addEventListener("submit", function () {
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("uploadBtn").disabled = true;
+        document.getElementById("uploadBtn").textContent = "Memproses...";
+      });
+
+      document.getElementById("imageInput").addEventListener("change", function (e) {
+        const fileName = e.target.files[0]?.name;
+        if (fileName) {
+          document.querySelector(".file-input-label").textContent = `📁 ${fileName}`;
+        }
+      });
+    </script>
+  </body>
+</html>
