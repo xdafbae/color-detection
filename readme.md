@@ -33,13 +33,13 @@ Bisa berupa file JPG, PNG,).
 **1.Inputan Gambar
 -** Gambar diambil dari file sebagai data yang akan di proses.
 
-## 2.Deteksi Warna
+##2.Deteksi Warna
 -** Model mengenali area warna (seperti red, yellow, green, dll) dan menghasilkan:
 Label warna,
 Confidence score,
 Koordinat bounding box,
 
-## 3.Menampilkan Hasil
+##3.Menampilkan Hasil
 -** Hasil ditampilkan ke pengguna dalam bentuk:
 Gambar dengan bounding box warna
 Label + confidence di bawah gambar
