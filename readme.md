@@ -1,7 +1,7 @@
 🖼️ Color Detection 
 Deteksi warna otomatis berbasis Computer Vision menggunakan model YOLOv8 yang dilatih dari dataset Roboflow. Proyek ini memungkinkan pengguna mengunggah gambar dan mendeteksi warna-warna seperti red, yellow, green, blue, dll secara instan melalui antarmuka web sederhana (Flask).
 
-Latar Belakang 
+🧠Latar Belakang 
 Deteksi warna merupakan salah satu teknik dasar dalam pengolahan citra digital yang banyak digunakan dalam bidang Computer Vision. Warna dapat menjadi petunjuk visual untuk mengenali dan membedakan objek dalam sebuah gambar. Teknik ini memiliki berbagai aplikasi, seperti pelacakan objek, klasifikasi barang, dan sistem pengawasan. Dengan memanfaatkan representasi warna seperti RGB atau HSV, komputer dapat mendeteksi dan mengolah objek berdasarkan warna secara otomatis.
 
 📌 Fitur Utama
