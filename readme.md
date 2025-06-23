@@ -26,21 +26,21 @@ Gambar digital dengan objek yang memiliki warna mencolok atau kontras.
 Bisa berupa file JPG, PNG,).
 
 ##Dataset Warna
-**https://universe.roboflow.com/u-long-kfqut/color-uuncb
+** https://universe.roboflow.com/u-long-kfqut/color-uuncb
 
 
 ## 🚀  Proses Implementasi
 **1.Inputan Gambar
--**Gambar diambil dari file sebagai data yang akan di proses.
+-** Gambar diambil dari file sebagai data yang akan di proses.
 
 ## 2.Deteksi Warna
--Model mengenali area warna (seperti red, yellow, green, dll) dan menghasilkan:
-Label warna
-Confidence score
-Koordinat bounding box
+-** Model mengenali area warna (seperti red, yellow, green, dll) dan menghasilkan:
+Label warna,
+Confidence score,
+Koordinat bounding box,
 
 ## 3.Menampilkan Hasil
--Hasil ditampilkan ke pengguna dalam bentuk:
+-** Hasil ditampilkan ke pengguna dalam bentuk:
 Gambar dengan bounding box warna
 Label + confidence di bawah gambar
 
