@@ -7,10 +7,10 @@ Deteksi warna merupakan salah satu teknik dasar dalam pengolahan citra digital y
 
 ## 📌 Fitur Utama
 
-- **🔍Deteksi warna objek secara real-time menggunakan YOLOv8
-- **🌐 Antarmuka web berbasis Flask untuk upload dan visualisasi hasil
-- **🧠 Model dilatih menggunakan dataset anotasi warna dari Roboflow
-- **💾 Hasil prediksi ditampilkan secara visual dan dalam bentuk confidence score
+- 🔍Deteksi warna objek secara real-time menggunakan YOLOv8
+- 🌐 Antarmuka web berbasis Flask untuk upload dan visualisasi hasil
+- 🧠 Model dilatih menggunakan dataset anotasi warna dari Roboflow
+- 💾 Hasil prediksi ditampilkan secara visual dan dalam bentuk confidence score
 
 ##📂 Dataset
 
@@ -18,37 +18,37 @@ Deteksi warna merupakan salah satu teknik dasar dalam pengolahan citra digital y
 
 ##🔗 Dataset Link:
 
-- **Color Classification Dataset (Roboflow)
+- Color Classification Dataset (Roboflow)
 
 ## 🛠️ Kebutuhan Sistem
-- **Gambar sebagai Input : 
-- **Gambar digital dengan objek yang memiliki warna mencolok atau kontras.
+- Gambar sebagai Input : 
+- Gambar digital dengan objek yang memiliki warna mencolok atau kontras.
 Bisa berupa file JPG, PNG,).
 
 ## Dataset Warna
-- **https://universe.roboflow.com/u-long-kfqut/color-uuncb
+- https://universe.roboflow.com/u-long-kfqut/color-uuncb
 
 
 ## 🚀  Proses Implementasi
-- **1.Inputan Gambar
-- ** Gambar diambil dari file sebagai data yang akan di proses.
+- 1.Inputan Gambar
+-  Gambar diambil dari file sebagai data yang akan di proses.
 
 ##2.Deteksi Warna
-- ** Model mengenali area warna (seperti red, yellow, green, dll) dan menghasilkan:
-- **Label warna,
-- **Confidence score,
-- **Koordinat bounding box,
+-  Model mengenali area warna (seperti red, yellow, green, dll) dan menghasilkan:
+- Label warna,
+- Confidence score,
+- Koordinat bounding box,
 
 ## 3.Menampilkan Hasil
-- ** Hasil ditampilkan ke pengguna dalam bentuk:
-- **Gambar dengan bounding box warna
-- **Label + confidence di bawah gambar
+- Hasil ditampilkan ke pengguna dalam bentuk:
+- Gambar dengan bounding box warna
+- Label + confidence di bawah gambar
 
 
 
 ##👤 Author
-Dafa Yudistira
-Email: dafayudistira24@gmail.com
+- Dafa Yudistira
+- Email: dafayudistira24@gmail.com
 Project for Computer Vision Implementation
 
 
