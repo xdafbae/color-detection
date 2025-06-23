@@ -7,7 +7,7 @@ Deteksi warna merupakan salah satu teknik dasar dalam pengolahan citra digital y
 
 ## 📌 Fitur Utama
 
-- 🔍Deteksi warna objek secara real-time menggunakan YOLOv8
+- 🔍Deteksi warna objek menggunakan YOLOv8
 - 🌐 Antarmuka web berbasis Flask untuk upload dan visualisasi hasil
 - 🧠 Model dilatih menggunakan dataset anotasi warna dari Roboflow
 - 💾 Hasil prediksi ditampilkan secara visual dan dalam bentuk confidence score
