@@ -27,11 +27,11 @@ Color Classification Dataset (Roboflow)
 - Supported formats: JPG, PNG
 
 ## 🚀 Implementation Process
-- Image Input
+- 1. Image Input
 
 - Image is uploaded from the user as input data for processing.
 
-- Color Detection
+- 2. Color Detection
 
 - The model detects color regions (e.g., red, yellow, green, etc.) and produces:
 
@@ -41,7 +41,7 @@ Color Classification Dataset (Roboflow)
 
 - Bounding box coordinates
 
-- Display Results
+- 3. Display Results
 
 - Results are shown to the user in the form of:
 
