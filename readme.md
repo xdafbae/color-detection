@@ -1,54 +1,57 @@
-## 🖼️ Color Detection 
-Deteksi warna otomatis berbasis Computer Vision menggunakan model YOLOv8 yang dilatih dari dataset Roboflow. Proyek ini memungkinkan pengguna mengunggah gambar dan mendeteksi warna-warna seperti red, yellow, green, blue, dll secara instan melalui antarmuka web sederhana (Flask).
+## 🖼️ Color Detection
+Automatic color detection using Computer Vision powered by a YOLOv8 model trained on a Roboflow dataset. This project allows users to upload images and instantly detect colors such as red, yellow, green, blue, etc., through a simple web interface built with Flask.
 
-## 🧠Latar Belakang 
+## 🧠 Background
+Color detection is one of the fundamental techniques in digital image processing, widely used in the field of Computer Vision. Color can serve as a visual cue to recognize and distinguish objects in an image. This technique has various applications, such as object tracking, product classification, and surveillance systems. By utilizing color representations like RGB or HSV, computers can automatically detect and process objects based on color.
 
-Deteksi warna merupakan salah satu teknik dasar dalam pengolahan citra digital yang banyak digunakan dalam bidang Computer Vision. Warna dapat menjadi petunjuk visual untuk mengenali dan membedakan objek dalam sebuah gambar. Teknik ini memiliki berbagai aplikasi, seperti pelacakan objek, klasifikasi barang, dan sistem pengawasan. Dengan memanfaatkan representasi warna seperti RGB atau HSV, komputer dapat mendeteksi dan mengolah objek berdasarkan warna secara otomatis.
+## 📌 Main Features
+- 🔍 Object color detection using YOLOv8
 
-## 📌 Fitur Utama
+- 🌐 Web interface built with Flask for image upload and result visualization
 
-- 🔍Deteksi warna objek menggunakan YOLOv8
-- 🌐 Antarmuka web berbasis Flask untuk upload dan visualisasi hasil
-- 🧠 Model dilatih menggunakan dataset anotasi warna dari Roboflow
-- 💾 Hasil prediksi ditampilkan secara visual dan dalam bentuk confidence score
+- 🧠 Model trained using a color-annotated dataset from Roboflow
 
-##📂 Dataset
+- 💾 Prediction results displayed visually with bounding boxes and confidence scores
 
-##Proyek ini menggunakan dataset dari Roboflow versi 3:
+- 📂 Dataset
+This project uses a color classification dataset from Roboflow (version 3).
 
-##🔗 Dataset Link:
+## 🔗 Dataset Link:
+Color Classification Dataset (Roboflow)
 
-- Color Classification Dataset (Roboflow)
+🛠️ System Requirements
+Input Image:
 
-## 🛠️ Kebutuhan Sistem
-- Gambar sebagai Input : 
-- Gambar digital dengan objek yang memiliki warna mencolok atau kontras.
-Bisa berupa file JPG, PNG,).
+Digital images containing objects with distinct or contrasting colors.
 
-## Dataset Warna
-- https://universe.roboflow.com/u-long-kfqut/color-uuncb
+Supported formats: JPG, PNG
 
+🚀 Implementation Process
+Image Input
 
-## 🚀  Proses Implementasi
-- 1.Inputan Gambar
--  Gambar diambil dari file sebagai data yang akan di proses.
+Image is uploaded from the user as input data for processing.
 
-##2.Deteksi Warna
--  Model mengenali area warna (seperti red, yellow, green, dll) dan menghasilkan:
-- Label warna,
-- Confidence score,
-- Koordinat bounding box,
+Color Detection
 
-## 3.Menampilkan Hasil
-- Hasil ditampilkan ke pengguna dalam bentuk:
-- Gambar dengan bounding box warna
-- Label + confidence di bawah gambar
+The model detects color regions (e.g., red, yellow, green, etc.) and produces:
 
+Color label
 
+Confidence score
 
-##👤 Author
-- Dafa Yudistira
-- Email: dafayudistira24@gmail.com
+Bounding box coordinates
+
+Display Results
+
+Results are shown to the user in the form of:
+
+Image with bounding boxes
+
+Labels + confidence scores below the image
+
+👤 Author
+Dafa Yudistira
+
+Email: dafayudistira24@gmail.com
 Project for Computer Vision Implementation
-
 
