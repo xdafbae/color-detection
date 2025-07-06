@@ -13,45 +13,45 @@ Color detection is one of the fundamental techniques in digital image processing
 
 - 💾 Prediction results displayed visually with bounding boxes and confidence scores
 
-- 📂 Dataset
-This project uses a color classification dataset from Roboflow (version 3).
+## 📂 Dataset
+## This project uses a color classification dataset from Roboflow (version 3).
 
 ## 🔗 Dataset Link:
 Color Classification Dataset (Roboflow)
 
-🛠️ System Requirements
-Input Image:
+## 🛠️ System Requirements
+- Input Image:
 
-Digital images containing objects with distinct or contrasting colors.
+- Digital images containing objects with distinct or contrasting colors.
 
-Supported formats: JPG, PNG
+- Supported formats: JPG, PNG
 
-🚀 Implementation Process
-Image Input
+## 🚀 Implementation Process
+- Image Input
 
-Image is uploaded from the user as input data for processing.
+- Image is uploaded from the user as input data for processing.
 
-Color Detection
+- Color Detection
 
-The model detects color regions (e.g., red, yellow, green, etc.) and produces:
+- The model detects color regions (e.g., red, yellow, green, etc.) and produces:
 
-Color label
+- Color label
 
-Confidence score
+- Confidence score
 
-Bounding box coordinates
+- Bounding box coordinates
 
-Display Results
+- Display Results
 
-Results are shown to the user in the form of:
+- Results are shown to the user in the form of:
 
-Image with bounding boxes
+- Image with bounding boxes
 
-Labels + confidence scores below the image
+- Labels + confidence scores below the image
 
-👤 Author
-Dafa Yudistira
+## 👤 Author
+- Dafa Yudistira
 
-Email: dafayudistira24@gmail.com
-Project for Computer Vision Implementation
+- Email: dafayudistira24@gmail.com
+- Project for Computer Vision Implementation
 
