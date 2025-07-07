@@ -49,6 +49,18 @@ Color Classification Dataset (Roboflow)
 
 - Labels + confidence scores below the image
 
+
+
+## Demo Project : 
+![image](https://github.com/user-attachments/assets/42ea6517-c5c7-4619-b21e-8d0246d84e52)
+
+![image](https://github.com/user-attachments/assets/bc3ce4c0-14ff-4e52-95aa-d238ebfd1e60)
+
+![image](https://github.com/user-attachments/assets/b4c8d094-0d7b-4ed9-b566-a4c566f2cca3)
+
+
+
+
 ## 👤 Author
 - Dafa Yudistira
 
